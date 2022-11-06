@@ -1,3 +1,7 @@
+"""
+Python CLI script to check if the password validates throught the given conditions and log the result
+"""
+
 import typer
 import getpass
 import re
