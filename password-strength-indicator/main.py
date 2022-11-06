@@ -2,13 +2,13 @@ import typer
 import getpass
 import re
 
-
+# funciton to check if the password has eight characters
 def leasteight(word):
 	if len(word) >= 8:
 		return True
 
 
-
+# funciton to check if the password has atleast 2 special characters
 def count_spec(word):
 
 	special_char = 0
@@ -29,7 +29,7 @@ def count_spec(word):
 	else:
 		return False
 
-
+# funciton to check if the password has atleast 2 numbers
 def count_num(word):
 	number = 0
 
@@ -45,6 +45,8 @@ def count_num(word):
 	else:
 		return False
 
+
+# function to check if the password starts with a number
 def check_init(word):
 	 if (word[0].isdigit()):
 	 	return True

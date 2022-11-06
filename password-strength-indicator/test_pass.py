@@ -3,10 +3,14 @@ import getpass
 
 
 def test_count():
-	word = getpass.getpass('Password:')
-	assert count_spec(word) == True
+	
+	assert count_spec("pass#rd") == True, "Function count_spec fails to check special character count"
 
+def test_num():
+	assert count_num("pass2ord") == True, "Function count_spec fails to check number of Numbers in password"
+	
 
 if __name__ == "__main__":
     test_count()
+    test_num()
     print("Everything passed")
