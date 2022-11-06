@@ -1,4 +1,4 @@
-from main import count_spec
+from main import count_spec, count_num, check_init
 import getpass
 
 
