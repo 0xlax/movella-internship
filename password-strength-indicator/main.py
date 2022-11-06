@@ -2,13 +2,13 @@ import typer
 import getpass
 import re
 
-# funciton to check if the password has eight characters
+# function to check if the password has eight characters
 def leasteight(word):
 	if len(word) >= 8:
 		return True
 
 
-# funciton to check if the password has atleast 2 special characters
+# function to check if the password has atleast 2 special characters
 def count_spec(word):
 
 	special_char = 0
@@ -29,7 +29,7 @@ def count_spec(word):
 	else:
 		return False
 
-# funciton to check if the password has atleast 2 numbers
+# function to check if the password has atleast 2 numbers
 def count_num(word):
 	number = 0
 
@@ -60,7 +60,7 @@ def check_init(word):
 
 def main():
 	strength = 0
-	pswd = getpass.getpass('Password:')
+	pswd = getpass.getpass('Please Enter a Password:')
 	# password = input("Enter a password: ")
 	print("Password Considered!")
 	
@@ -76,39 +76,40 @@ def main():
 		
 
 	if count_spec(pswd) ==  True:
-		strength += 30
+		strength += 25
 		# print("passed special alpha count")
 		# print("Strength: ", strength)
 	else:
 		violations.append("Less than 2 Special Characters")
 
 	if count_num(pswd) == True:
-		strength += 30
+		strength += 25
 		# print("passed number count")
 		# print("Strength: ", strength)
 	else:
 		violations.append("Less than 2 Numbers")
 
 	if check_init(pswd) == False:
-		strength +=15
+		strength +=25
 		# print("passed init check")
 		# print("Strength: ", strength)
 	else:
 		violations.append("Starts with a number")
 
 	if strength < 50:
-		print("Password Strength: LOW!")
+
+		print(f"Password Strength: {strength}, LOW!")
 	elif strength in range(50, 15):
-		print("Password Strength: AVERAGE!")
+		print(f"Password Strength: {strength}, AVERAGE!")
 	elif strength in range(75, 90):
-		print("Password Strength: GOOD!")
+		print(f"Password Strength: {strength}, GOOD!")
 	elif strength >= 90:
-		print("Password Strength: VERY GOOD!")
+		print(f"Password Strength: {strength}, VERY GOOD!")
 
 	if strength < 75:
-		print("")
 		print(violations[0])
-		print(violations[1])
+		if violations[1]:
+			print(violations[1])
 
 
 		
