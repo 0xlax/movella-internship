@@ -20,8 +20,9 @@ SELECT  Name, Salary from Employee WHERE Salary < (SELECT MAX(Salary) FROM Emplo
 ```
 4)Write a query to fetch the employ details who did not assigned with any students.
 ```
-SELECT Class_Teacher_employee_id from Student
-FROM 
+SELECT * from Employees.Name, Employees.Department, Employees.Gradem Employees.Salary,Employees.Gender, Student_id, Class_Teacher_Employee_Id 
+FROM Employee, Student 
+WHERE Student_id NOT IN Class_Teacher_Employee_Id
 ```
 
 5)Write a query to fetch the student who passed in all three subjects.
@@ -37,4 +38,6 @@ FROM Student
 6)Write a query to fetch the top employee details where all of his students passed in the subjects.
 
 ```
+Select * from Employees
+WHERE (SELECT Student_id( SELECT Subject1, Subject2, Subject3 FROM Student WHERE Subject1, Subject2, Subject3="P") FROM Student); 
 ```
