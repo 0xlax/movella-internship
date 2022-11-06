@@ -17,7 +17,7 @@ Group by Gender
 ```
 3) Write a query to fetch the second highest salaried employer
 ```
-
+SELECT  Name, Salary from Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee) ORDER BY Salary DESC LIMIT 1;
 ```
 4)Write a query to fetch the employ details who did not assigned with any students.
 ```
