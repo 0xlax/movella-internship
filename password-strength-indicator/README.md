@@ -16,5 +16,5 @@
 ```python3 main.py```
 
 
-##### Machine used: Lubuntu
+##### Machine used: HP, OS: Ubuntu
 
