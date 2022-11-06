@@ -15,6 +15,9 @@
 #### Start the program
 ```python3 main.py```
 
+### Result
+The program generated 3 files ```info.log``` ```debug.log``` and ```error.log``` with custom info, debug and error messages logged with time and levelname and a customised message
+
 
 ##### Machine used: HP, OS: Ubuntu
 
