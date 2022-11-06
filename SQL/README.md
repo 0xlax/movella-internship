@@ -13,19 +13,25 @@ WHERE Grade > 200;
 SELECT Department 
 (SELECT Gender  FROM Employees WHERE Gender="M")
 FROM Employees
-Group by Gender
 ```
 3) Write a query to fetch the second highest salaried employer
 ```
-SELECT  Name, Salary from Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee) ORDER BY Salary DESC LIMIT 1;
+SELECT  Name, Salary from Employee WHERE Salary < (SELECT MAX(Salary) FROM Employees) ORDER BY Salary DESC LIMIT 1;
 ```
 4)Write a query to fetch the employ details who did not assigned with any students.
 ```
+SELECT Class_Teacher_employee_id from Student
+FROM 
 ```
 
 5)Write a query to fetch the student who passed in all three subjects.
 
 ```
+SELECT Student_Id 
+(SELECT Subject1 FROM Student WHERE Subject1="P")
+(SELECT Subject2 FROM Student WHERE Subject2="P")
+(SELECT Subject3 FROM Student WHERE Subject3="P")
+FROM Student
 ```
 
 6)Write a query to fetch the top employee details where all of his students passed in the subjects.
